@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>DIC Café</title>
-  <link rel="stylesheet" href="CSS/normalize.css">
-  <link rel="stylesheet" href="CSS/contact_validation.css">
-</head>
-
-<body>
-  <header id="top">
+  <head>
+    <title>DIC cafe</title>
+    <link href="CSS/normalize.css" rel="stylesheet">
+    <link href="CSS/contact_validation.css" rel="stylesheet">
+    
+  </head>
+  <body>
+<header class="sub_header">
     <nav class="header_nav">
-      <ul class="drop_menu" id="drop_menu">
-        <li><a class="drop_menu_item" href="#">Inicio</a></li>
-        <li><a class="drop_menu_item" href="#">Menú</a></li>
-        <li><a class="drop_menu_item" href="#">Contacto</a></li>
-      </ul>
+        <ul class="_nav">
+          <a href="#" class="drop_menu_item">
+            <li>Inicio</li>
+          </a>
+          <a href="#" class="drop_menu_item">
+            <li>Menu</li>
+          </a>
+          <a href="#" class="drop_menu_item">
+            <li>Contactos</li>
+          </a>
+        </ul>
+      </div>
     </nav>
-  </header>
-  <section class="section_inner">
-    <div class="section_title">
-      <h1>CONTACTO</h1>
-      <p>Contáctanos</p>
-    </div>
-    <form action="#" method="POST" id="form">
-      <table id="table" class="contact">
-        <tbody id="tbody">
+</header>
+    <section class="section_inner">
+      <div class="section_title">
+        <h1>CONTACTO</h1>
+        <p>Contáctanos</p>
+      </div>
+      <form action="#" method="POST" id="form">
+        <table class="contact">
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Nombre</label></td>
             <td class="contact_input"><input type="text" name="name" id="name"></td>
@@ -34,24 +38,21 @@
             <td class="contact_sign"><label for="email">Email</label></td>
             <td class="contact_input"><input type="email" name="email" id="email"></td>
           </tr>
-          <tr id="Confirmar" class="contact_line">
-            <td class="contact_sign"><label for="email_confirm">Confirmar Email</label></td>
-            <td class="contact_input"><input type="email" name="email_confirm" id="email_confirm"></td>
+          <tr class="contact_line">
+            <td class="contact_sign"><label for="email_confirm">Correo electrónico (confirmación)</label></td>
+            <td class="contact_input"><input type="email" name="email_confirm" id="email_confirm" autocomplete="off"></td>
           </tr>
-
-          <tr id="prueba" class="contact_content">
+          <tr class="contact_content">
             <td class="contact_sign"><label for="content">Contenido</label></td>
             <td class="contact_input"><textarea name="content" id="content"></textarea></td>
           </tr>
-        </tbody>
-      </table>
-      <div class="contact_btn_area">
-        <button type="reset" class="contact_btn reset_btn">Reiniciar</button>
-        <button type="submit" class="contact_btn submit_btn">Enviar</button>
-      </div>
-    </form>
-  </section>
-  <script src="javascripts/validation.js"></script>
-</body>
-
+        </table>
+        <div class="contact_btn_area">
+          <button type="reset" class="contact_btn reset_btn">Reiniciar</button>
+          <button type="submit" class="contact_btn submit_btn">Enviar.</button>
+        </div>
+      </form>
+    </section>
+    <script src="javascripts/validation.js"></script>
+  </body>
 </html>

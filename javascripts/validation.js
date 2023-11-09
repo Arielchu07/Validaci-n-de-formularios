@@ -1,31 +1,33 @@
+const prueba = document.getElementById("email_confirm")
 function emailValidation() {
   const form = document.getElementById('form');
-  form.addEventListener('submit', function (e) {
-    const email = form.email.value;
-    const emailConfirm = form.email_confirm.value;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if(form.email.value !== form.email_confirm.value) {
+      const element = document.createElement('p')
+      const message = document.createTextNode("El correo electrónico no coincide.")
+      
+      
 
-    if (email !== emailConfirm) {
-      e.preventDefault();
-      const errorElement = document.createElement('p');
-      const errorMessage = document.createTextNode("El correo electrónico no coincide.");
-      errorElement.appendChild(errorMessage);
-      errorElement.classList.add("alert");
-
-      (document.getElementById("tbody")).insertBefore(errorElement, document.getElementById("prueba"));
-      email_conf.style.backgroundColor = "rgba(230,169,171,.5)";
-
-
-
-      setTimeout(function () {
-        errorElement.remove();
-        document.getElementById("email_confirm").style.backgroundColor = "";
-      }, 3000);
+      form.appendChild(element);
+      element.appendChild(message);
+      element.classList.add("alert");
+      setTimeout(() => {
+        form.removeChild(element)
+      }, 3000)
+    } else {
+      form.submit();
     }
   });
-}
+};
 
+prueba.addEventListener("keyup", function() {
+  const email = prueba.value
+  const email_confirm = document.getElementById("email").value;
+  if(email != email_confirm) {
+    prueba.classList.add("error_bg")
+  } else {
+    prueba.classList.remove("error_bg")
+  }
+})
 window.onload = emailValidation;
-
-const email_conf = document.getElementById("email_confirm");
-
-
